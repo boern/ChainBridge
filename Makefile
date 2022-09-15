@@ -1,7 +1,7 @@
 PROJECTNAME=$(shell basename "$(PWD)")
 VERSION=-ldflags="-X main.Version=$(shell git describe --tags)"
 SOL_DIR=./solidity
-ARCH=$(shell arch)
+ARCH=amd64
 
 CENT_EMITTER_ADDR?=0x1
 CENT_CHAIN_ID?=0x1
@@ -77,11 +77,11 @@ test-e2e:
 
 test-eth:
 	@echo "  >  \033[32mRunning ethereum tests...\033[0m "
-	go test ./chains/ethereum
+	go test -v --count=1 ./chains/ethereum
 
 test-sub:
 	@echo "  >  \033[32mRunning substrate tests...\033[0m "
-	go test ./chains/substrate
+	go test -v --count=1 ./chains/substrate
 
 docker-start:
 	./scripts/docker/start-docker.sh
