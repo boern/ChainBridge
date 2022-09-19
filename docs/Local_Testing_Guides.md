@@ -76,33 +76,7 @@ cargo build --release
     - Select the Development dropdown
     - Set `ws://localhost:9944` as the custom endpoint
     - Click `Switch` to connect
-3. Set up type definitions for the chain:
-    - Navigate to `Settings`
-    - Select the `Developer` tab
-    - Paste in the below Type Defintions
-    - Save
 
-**Type Defintions:**
-```json
-{
-  "chainbridge::ChainId": "u8",
-  "ChainId": "u8",
-  "ResourceId": "[u8; 32]",
-  "DepositNonce": "u64",
-  "ProposalVotes": {
-    "votes_for": "Vec<AccountId>",
-    "votes_against": "Vec<AccountId>",
-    "status": "enum"
-  },
-  "Erc721Token": {
-    "id": "TokenId",
-    "metadata": "Vec<u8>"
-  },
-  "TokenId": "U256",
-  "Address": "AccountId",
-  "LookupSource": "AccountId"
-}
-```
 * These can be found found [here](https://github.com/ChainSafe/chainbridge-Substrate-chain#polkadot-js-apps)
 
 ## On-Chain Setup (Ethereum)
